@@ -19,6 +19,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import portfolioQR from '@/assets/portfolio-qr.jpg';
+import resumePDF from '@/assets/Raghu_CV_.pdf';
+import emailjs from 'emailjs-com';
+
+
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -43,17 +47,31 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent! 🚀",
-      description: "Thanks for reaching out! I'll get back to you soon.",
-    });
-    
-    reset();
-    setIsSubmitting(false);
+    try {
+      const result = await emailjs.send(
+        'your_service_id',   
+        'your_template_id',  
+        {
+          from_name: data.name,
+          reply_to: data.email,
+          message: data.message
+        },
+        'your_public_key'     
+      );
+
+      toast({
+        title: "Message sent! 🚀",
+        description: "Thanks for reaching out! I'll get back to you soon.",
+      });
+      reset();
+    } catch (error) {
+      toast({
+        title: "Oops!",
+        description: "Something went wrong while sending the message.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -102,7 +120,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
+          
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -175,7 +193,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Info & QR */}
+       
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -183,7 +201,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Contact Information */}
+            
             <div className="bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-2xl p-8 shadow-3d">
               <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
               
@@ -213,22 +231,28 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Resume Download & QR Code */}
+           
             <div className="grid grid-cols-2 gap-4">
-              {/* Resume Download */}
+              
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-xl p-6 shadow-card text-center"
               >
                 <Download className="w-8 h-8 text-primary mx-auto mb-3" />
                 <p className="text-sm font-medium mb-3">Download Resume</p>
-                <Button size="sm" variant="outline" className="w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  PDF
-                </Button>
+                              <a
+                href={resumePDF}
+                download="Raghuprem_Resume.pdf"
+                className="w-full block"
+              >
+            <Button size="sm" variant="outline" className="w-full">
+              <Download className="w-4 h-4 mr-2" />
+              PDF
+            </Button>
+            </a>
               </motion.div>
 
-              {/* QR Code */}
+           
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-xl p-6 shadow-card text-center"
@@ -244,8 +268,8 @@ const Contact = () => {
               </motion.div>
             </div>
 
-            {/* Location */}
-            <motion.div
+                        
+                        <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -254,8 +278,12 @@ const Contact = () => {
             >
               <MapPin className="w-6 h-6 text-primary mx-auto mb-3" />
               <p className="font-medium">Based in India</p>
-              <p className="text-sm text-muted-foreground">Available for remote work worldwide</p>
+              <p className="text-sm text-muted-foreground">
+                Open to <span className="font-semibold text-primary">remote</span> or{' '}
+                <span className="font-semibold text-primary">on-site roles in Bangalore & Hyderabad</span>
+              </p>
             </motion.div>
+
           </motion.div>
         </div>
       </div>

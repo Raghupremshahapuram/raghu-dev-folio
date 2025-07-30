@@ -58,7 +58,7 @@ const Navbar = () => {
             RS
           </motion.div>
 
-          {/* Desktop Navigation */}
+        
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.button
@@ -73,9 +73,9 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right Section */}
+          
           <div className="flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
+            
             <Button
               variant="ghost"
               size="sm"
@@ -93,7 +93,7 @@ const Navbar = () => {
               </motion.div>
             </Button>
 
-            {/* Mobile Menu Button */}
+           
             <Button
               variant="ghost"
               size="sm"
@@ -105,7 +105,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        
         <motion.div
           initial={false}
           animate={{

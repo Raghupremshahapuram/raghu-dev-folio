@@ -9,7 +9,7 @@ const Certificates = () => {
       provider: "Edureka",
       description: "Comprehensive React.js development course covering hooks, context, and modern practices",
       skills: ["React.js", "Hooks", "Context API", "Component Design"],
-      link: "#",
+      link: "https://www.edureka.co/certificates/mycertificate/a2de434d82d07a239c24b506b42c9102",
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -17,7 +17,7 @@ const Certificates = () => {
       provider: "Edureka",
       description: "Angular framework certification covering components, services, and TypeScript",
       skills: ["Angular", "TypeScript", "Services", "RxJS"],
-      link: "#",
+      link: "https://www.edureka.co/certificates/mycertificate/193184ae27526978d577f295ef4d8412",
       color: "from-red-500 to-red-600"
     }
   ];
@@ -55,12 +55,12 @@ const Certificates = () => {
               className="group perspective-1000"
             >
               <div className="relative bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-2xl overflow-hidden shadow-3d hover:shadow-card-hover transition-all duration-500 transform-gpu">
-                {/* Background Gradient */}
+             
                 <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
                 
-                {/* Content */}
+                
                 <div className="relative p-8 space-y-6">
-                  {/* Header */}
+                 
                   <div className="flex items-start justify-between">
                     <div className="flex items-center space-x-3">
                       <div className={`p-3 rounded-full bg-gradient-to-br ${cert.color}`}>
@@ -73,12 +73,12 @@ const Certificates = () => {
                     </div>
                   </div>
 
-                  {/* Description */}
+             
                   <p className="text-muted-foreground leading-relaxed">
                     {cert.description}
                   </p>
 
-                  {/* Skills */}
+                  
                   <div className="space-y-3">
                     <h4 className="text-sm font-semibold text-foreground">Key Skills</h4>
                     <div className="flex flex-wrap gap-2">
@@ -93,27 +93,35 @@ const Certificates = () => {
                     </div>
                   </div>
 
-                  {/* Action Button */}
+                 
                   <div className="pt-4">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Certificate
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Certificate
+                      </Button>
+                    </a>
                   </div>
+
                 </div>
 
-                {/* Hover Effect */}
+               
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Additional Learning */}
+       
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

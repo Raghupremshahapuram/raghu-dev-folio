@@ -16,7 +16,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-6">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+          
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -32,7 +32,7 @@ const Hero = () => {
               >
                 Hi, I'm{' '}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Raghuprem Shahapuram
+                  Shahapuram Raghuprem 
                 </span>
               </motion.h1>
               
@@ -56,7 +56,7 @@ const Hero = () => {
               </motion.p>
             </div>
 
-            {/* CTA Buttons */}
+          
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Profile Image */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -97,10 +97,10 @@ const Hero = () => {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 className="relative group"
               >
-                {/* Glow Effect */}
+               
                 <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
                 
-                {/* Glass Card Effect */}
+                
                 <div className="relative bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-3xl p-6 shadow-3d transform hover:scale-105 transition-all duration-500">
                   <img
                     src={profileAvatar}
@@ -108,7 +108,7 @@ const Hero = () => {
                     className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl"
                   />
                   
-                  {/* Floating Elements */}
+                  
                   <motion.div
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

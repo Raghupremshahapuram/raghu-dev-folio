@@ -15,7 +15,7 @@ const Skills = () => {
     },
     {
       title: "AI & Tools",
-      skills: ["ChatGPT", "Gemini", "GitHub Actions", "Git", "VS Code", "Figma"],
+      skills: ["ChatGPT", "Gemini", "GitHub Actions", "Git", "VS Code"],
       color: "bg-purple-500/10 text-purple-600 border-purple-500/20"
     },
     {
@@ -86,7 +86,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Overview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

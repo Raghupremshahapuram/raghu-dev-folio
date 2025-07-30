@@ -21,7 +21,7 @@ const Footer = () => {
     <footer className="py-12 px-6 border-t border-border bg-muted/30">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-          {/* Logo & Copyright */}
+         
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Built with love */}
+        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,17 +45,17 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex items-center space-x-2 text-sm text-muted-foreground"
           >
-            <span>Built with</span>
+            <span>Built with using React, Tailwind & AI too</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-            </motion.div>
-            <span>using React, Tailwind & AI tools</span>
+        
+           </motion.div>
+          
           </motion.div>
 
-          {/* Social Links */}
+        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Back to top */}
+       
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

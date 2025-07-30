@@ -28,9 +28,9 @@ const Projects = () => {
       }
     ],
     links: {
-      demo: "#",
-      frontend: "#",
-      backend: "#"
+      demo: "https://fbooking.netlify.app/",
+      frontend: "https://github.com/Raghupremshahapuram/Booking_time",
+      backend: "https://github.com/Raghupremshahapuram/Chatbotapi-"
     }
   };
 
@@ -63,7 +63,7 @@ const Projects = () => {
           >
             <div className="bg-gradient-glass backdrop-blur-glass border border-glass-border rounded-3xl p-8 shadow-3d hover:shadow-card-hover transition-all duration-500">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
-                {/* Project Image */}
+               
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-secondary">
                   <div className="aspect-video flex items-center justify-center">
                     <Film className="w-16 h-16 text-white/50" />
@@ -71,13 +71,12 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                {/* Project Details */}
+                
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                     <p className="text-muted-foreground mb-4">{project.description}</p>
-                    
-                    {/* Tags */}
+                   
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tags.map((tag) => (
                         <Badge
@@ -91,7 +90,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Features */}
+                 
                   <div className="space-y-3">
                     {project.features.map((feature, index) => (
                       <motion.div
@@ -110,31 +109,40 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-3">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="bg-gradient-primary hover:shadow-card transition-all duration-300"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Github className="w-4 h-4 mr-2" />
-                      Frontend
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Github className="w-4 h-4 mr-2" />
-                      Backend
-                    </Button>
+                                  
+                   <div className="flex flex-wrap gap-3">
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="bg-gradient-primary hover:shadow-card transition-all duration-300"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
+                    </a>
+
+                    <a href={project.links.frontend} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm">
+                        <Github className="w-4 h-4 mr-2" />
+                        Frontend
+                      </Button>
+                    </a>
+
+                    <a href={project.links.backend} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm">
+                        <Github className="w-4 h-4 mr-2" />
+                        Backend
+                      </Button>
+                    </a>
                   </div>
+
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* More Projects Coming Soon */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
