@@ -20,17 +20,18 @@ const About = () => {
     {
       icon: Briefcase,
       title: "Quality Analyst",
-      period: "2023-2024",
+      period: "2023-2025",
       description: "Developed meticulous attention to detail and testing methodologies",
       color: "bg-purple-500"
     },
     {
       icon: Code2,
       title: "Full-Stack Developer",
-      period: "2024-Present",
-      description: "Building scalable applications with modern technologies and AI integration",
+      period: "2024 – Present",
+      description: "Developing and deploying full-stack applications using React.js, Node.js, PostgreSQL, and AI tools like ChatGPT & Gemini. Built a complete movie booking web app with real-time booking and CI/CD integration.",
       color: "bg-primary"
     }
+    
   ];
 
   return (

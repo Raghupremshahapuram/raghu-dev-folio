@@ -19,7 +19,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import portfolioQR from '@/assets/portfolio-qr.jpg';
-import resumePDF from '@/assets/Raghu_CV_.pdf';
+import resumePDF from '@/assets/Raghuprem_CV.pdf';
 import emailjs from 'emailjs-com';
 
 
