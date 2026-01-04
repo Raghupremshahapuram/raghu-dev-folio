@@ -6,21 +6,21 @@ const About = () => {
     {
       icon: GraduationCap,
       title: "Diploma in Mechanical Engineering",
-      period: "2018-2021",
+      period: "2013-2016",
       description: "Built a strong foundation in engineering principles and problem-solving",
       color: "bg-blue-500"
     },
     {
       icon: GraduationCap,
       title: "B.Tech in Mechanical Engineering",
-      period: "2021-2024",
+      period: "2016-2019",
       description: "Advanced technical knowledge and analytical thinking skills",
       color: "bg-green-500"
     },
     {
       icon: Briefcase,
       title: "Quality Analyst",
-      period: "2023-2025",
+      period: "2020-2025",
       description: "Developed meticulous attention to detail and testing methodologies",
       color: "bg-purple-500"
     },
