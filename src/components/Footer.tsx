@@ -45,7 +45,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex items-center space-x-2 text-sm text-muted-foreground"
           >
-            <span>Built with using React, Tailwind & AI too</span>
+            
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
